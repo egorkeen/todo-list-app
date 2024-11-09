@@ -1,0 +1,16 @@
+@import "/src/styles";
+
+html {
+  background-color: $gray08;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+
+  .title {
+    color: $white01;
+  }
+}
