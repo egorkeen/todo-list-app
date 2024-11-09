@@ -52,7 +52,12 @@ export const useTodos: UseTodos = (
       removeTodo,
       clearCompletedTodos
     }),
-    []
+    [
+      filteredTodos,
+      addTodo,
+      removeTodo,
+      clearCompletedTodos
+    ]
   );
 
   return result;
