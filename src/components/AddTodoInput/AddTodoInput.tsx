@@ -1,5 +1,6 @@
 import { Button, Flex, Input } from "antd";
 import { FC, memo, useState } from "react";
+import styles from "./AddTodoInput.module.scss"
 
 type AddTodoInputProps = {
   onAdd: (name: string) => void;
@@ -19,12 +20,13 @@ const AddTodoInput: FC<AddTodoInputProps> = memo(
     };
 
     return (
-      <Flex gap={5}>
+      <Flex gap={10}>
         <Input
           placeholder="Enter todo's description"
           value={value}
           onChange={(event) => setValue(event.target.value)}
           onPressEnter={handleAddTodo}
+          className={styles.input}
         />
         <Button type="primary" onClick={handleAddTodo}>
           Add Todo
