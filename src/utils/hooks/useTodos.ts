@@ -44,7 +44,7 @@ export const useTodos: UseTodos = (
     );
 
     setTodos(clearedTodos);
-  }, []);
+  }, [todos]);
 
   const toggleTodo = useCallback(
     (id: Todo["id"]) => {

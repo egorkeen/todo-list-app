@@ -1,0 +1,10 @@
+@use "/src/styles/colors" as colors;
+
+.controlPanel {
+  width: 480px;
+  margin-top: 20px;
+
+  .counter {
+    color: colors.$white01;
+  }
+}

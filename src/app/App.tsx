@@ -12,8 +12,12 @@ export const App = () => {
   const [filterType, setFilterType] = useState(
     TodoSegmentType.ALL
   );
-  const { todos, addTodo, toggleTodo } =
-    useTodos(filterType);
+  const {
+    todos,
+    addTodo,
+    toggleTodo,
+    clearCompletedTodos
+  } = useTodos(filterType);
 
   return (
     <Flex gap={10} vertical className={styles.app}>
@@ -25,7 +29,11 @@ export const App = () => {
 
       <TodosList toggleTodo={toggleTodo} todos={todos} />
 
-      <ControlPanel />
+      <ControlPanel
+        todos={todos}
+        setFilterType={setFilterType}
+        clearCompletedTodos={clearCompletedTodos}
+      />
     </Flex>
   );
 };

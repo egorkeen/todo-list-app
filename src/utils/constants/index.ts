@@ -1,7 +1,7 @@
 import { SegmentedOptions } from "antd/es/segmented";
 import { TodoSegmentType } from "../types";
 
-export const segmentsOptions: SegmentedOptions = [
+export const segmentsOptions: SegmentedOptions<TodoSegmentType> = [
   {
     value: TodoSegmentType.ALL,
     label: "All"
@@ -14,4 +14,4 @@ export const segmentsOptions: SegmentedOptions = [
     value: TodoSegmentType.ACTIVE,
     label: "Active"
   }
-];
+] as const;
