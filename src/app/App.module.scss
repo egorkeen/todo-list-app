@@ -1,7 +1,7 @@
-@import "/src/styles";
+@use "/src/styles/colors" as colors;
 
 html {
-  background-color: $gray08;
+  background-color: colors.$gray08;
 }
 
 .app {
@@ -11,6 +11,6 @@ html {
   height: 90vh;
 
   .title {
-    color: $white01;
+    color: colors.$white01;
   }
 }
