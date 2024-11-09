@@ -1,5 +1,5 @@
 import { SegmentedOptions } from "antd/es/segmented";
-import { TodoSegmentType } from "./types";
+import { TodoSegmentType } from "../types";
 
 export const segmentsOptions: SegmentedOptions = [
   {
