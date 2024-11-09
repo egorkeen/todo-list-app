@@ -7,6 +7,7 @@ type UseTodos = (filter: TodoSegmentType) => {
   addTodo: (todoName: string) => void;
   removeTodo: (id: Todo["id"]) => void;
   clearCompletedTodos: () => void;
+  toggleTodo: (id: Todo["id"]) => void;
 };
 
 export const useTodos: UseTodos = (
@@ -20,7 +21,7 @@ export const useTodos: UseTodos = (
     const newTodo: Todo = {
       name: todoName,
       completed: false,
-      id: new Date().toDateString()
+      id: new Date().toString().concat(todoName)
     };
 
     setTodos((prevTodos) => [...prevTodos, newTodo]);
@@ -45,18 +46,33 @@ export const useTodos: UseTodos = (
     setTodos(clearedTodos);
   }, []);
 
+  const toggleTodo = useCallback(
+    (id: Todo["id"]) => {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id
+            ? { ...todo, completed: !todo.completed }
+            : todo
+        )
+      );
+    },
+    [todos]
+  );
+
   const result = useMemo(
     () => ({
       todos: filteredTodos,
       addTodo,
       removeTodo,
-      clearCompletedTodos
+      clearCompletedTodos,
+      toggleTodo
     }),
     [
       filteredTodos,
       addTodo,
       removeTodo,
-      clearCompletedTodos
+      clearCompletedTodos,
+      toggleTodo
     ]
   );
 

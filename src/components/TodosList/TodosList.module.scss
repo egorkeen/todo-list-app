@@ -1,0 +1,15 @@
+@use "/src/styles/colors" as colors;
+
+.todos {
+  margin-top: 20px;
+  width: 400px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background-color: colors.$gray07;
+
+  .empty {
+    :global(.ant-empty-description) {
+      color: colors.$gray04;
+    }
+  }
+}

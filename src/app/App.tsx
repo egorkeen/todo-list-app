@@ -12,17 +12,18 @@ export const App = () => {
   const [filterType, setFilterType] = useState(
     TodoSegmentType.ALL
   );
-  const { todos, addTodo } = useTodos(filterType);
+  const { todos, addTodo, toggleTodo } =
+    useTodos(filterType);
 
   return (
-    <Flex vertical className={styles.app}>
+    <Flex gap={10} vertical className={styles.app}>
       <Typography.Title className={styles.title}>
         Todos
       </Typography.Title>
 
       <AddTodoInput onAdd={addTodo} />
 
-      <TodosList />
+      <TodosList toggleTodo={toggleTodo} todos={todos} />
 
       <ControlPanel />
     </Flex>
