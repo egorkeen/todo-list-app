@@ -1,53 +1,22 @@
-# React + TypeScript + Vite
+# Todo List 📝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Небольшое приложение для организации списка дел 📋
 
-Currently, two official plugins are available:
+## Используемые технологии 🛠️
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/Ant Design-0170FE?style=for-the-badge&logo=antdesign&logoColor=white"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/> 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Особенности ✨
+- Добавление задач как по кнопке, так и при нажатии на Enter ╋
+- Есть счётчик 🧮
+- Есть возможноть фильтровать задачи по их статусу 🗃️
+- Можно избавиться от выполненных задач, нажав на соответствующую кнопку 🧹
 
-## Expanding the ESLint configuration
+## Как запустить проект 🏃
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Убедитесь, что у вас установлен Node.js и npm 🌐
+2. Клонируйте репозиторий на свой локальный компьютер 💻
+3. Установите зависимости, выполнив команду npm install 🛠️
+4. Запустите приложение, введя команду npm start 🏁
+5. Откройте ваш браузер и перейдите по адресу [http://localhost:5173](http://localhost:5173/) 🌎
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: [
-        "./tsconfig.node.json",
-        "./tsconfig.app.json"
-      ],
-      tsconfigRootDir: import.meta.dirname
-    }
-  }
-});
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules
-  }
-});
-```
+Также есть возможность посмотреть готовую реализацию на сайте Vercel 🎥
