@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|js|jsx|json|css|md|mdx|html)\"",
+    "format": "npm run prettier -- --write",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "start": "vite",
+    "build": "tsc -b && lint && test vite build"
   },
   "dependencies": {
     "antd": "^5.21.6",

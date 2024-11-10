@@ -1,6 +1,6 @@
 import { Button, Flex, Input } from "antd";
 import { FC, memo, useState } from "react";
-import styles from "./AddTodoInput.module.scss"
+import styles from "./AddTodoInput.module.scss";
 
 type AddTodoInputProps = {
   onAdd: (name: string) => void;
