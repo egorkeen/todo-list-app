@@ -6,7 +6,7 @@ import {
 import { ControlPanel } from "./ControlPanel";
 import { TodoSegmentType } from "../../utils";
 
-const mockSetFilterType = jest.fn();
+const mockOnSelectFilter = jest.fn();
 const mockClearCompletedTodos = jest.fn();
 
 describe("ControlPanel", () => {
@@ -20,7 +20,7 @@ describe("ControlPanel", () => {
     render(
       <ControlPanel
         todos={todos}
-        setFilterType={mockSetFilterType}
+        onSelectFilter={mockOnSelectFilter}
         clearCompletedTodos={mockClearCompletedTodos}
       />
     );
@@ -30,11 +30,11 @@ describe("ControlPanel", () => {
     ).toBeInTheDocument();
   });
 
-  test("setFilterType вызывается при изменении фильтра", () => {
+  test("onSelectFilter вызывается при изменении фильтра", () => {
     render(
       <ControlPanel
         todos={todos}
-        setFilterType={mockSetFilterType}
+        onSelectFilter={mockOnSelectFilter}
         clearCompletedTodos={mockClearCompletedTodos}
       />
     );
@@ -48,13 +48,13 @@ describe("ControlPanel", () => {
 
     fireEvent.click(activeFilter);
 
-    expect(mockSetFilterType).toHaveBeenCalledWith(
+    expect(mockOnSelectFilter).toHaveBeenCalledWith(
       TodoSegmentType.ACTIVE
     );
 
     fireEvent.click(allFilter);
 
-    expect(mockSetFilterType).toHaveBeenCalledWith(
+    expect(mockOnSelectFilter).toHaveBeenCalledWith(
       TodoSegmentType.ALL
     );
   });
@@ -63,7 +63,7 @@ describe("ControlPanel", () => {
     render(
       <ControlPanel
         todos={todos}
-        setFilterType={mockSetFilterType}
+        onSelectFilter={mockOnSelectFilter}
         clearCompletedTodos={mockClearCompletedTodos}
       />
     );
