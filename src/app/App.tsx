@@ -5,7 +5,7 @@ import {
   ControlPanel,
   TodosList
 } from "../components";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { TodoSegmentType, useTodos } from "../utils";
 
 export const App = () => {
@@ -19,6 +19,13 @@ export const App = () => {
     clearCompletedTodos
   } = useTodos(filterType);
 
+  const handleSelectFilter = useCallback(
+    (value: TodoSegmentType) => {
+      setFilterType(value);
+    },
+    []
+  );
+
   return (
     <Flex gap={10} vertical className={styles.app}>
       <Typography.Title className={styles.title}>
@@ -31,7 +38,7 @@ export const App = () => {
 
       <ControlPanel
         todos={todos}
-        setFilterType={setFilterType}
+        onSelectFilter={handleSelectFilter}
         clearCompletedTodos={clearCompletedTodos}
       />
     </Flex>
